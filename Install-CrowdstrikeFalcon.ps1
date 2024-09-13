@@ -19,6 +19,7 @@
     - CrowdstrikeId
 #>
 
+$ProgressPreference = "SilentlyContinue"
 
 #Link to publicly available .exe
 $PublicUrl = "$($SecureVars.CrowdstrikeInstaller)"

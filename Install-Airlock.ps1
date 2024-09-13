@@ -23,6 +23,8 @@
   - AirlockServer
 #>
 
+$ProgressPreference = "SilentlyContinue"
+
 #Link to publicly available .msi
 $PublicUrl = "$($SecureVars.AirlockAgent)"
 

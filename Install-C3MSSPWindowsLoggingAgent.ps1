@@ -22,6 +22,8 @@
   - msspClientId
 #>
 
+$ProgressPreference = "SilentlyContinue"
+
 #Link to publicly available .msi
 $PublicUrl = "$($SecureVars.msspLoggingAgent)"
 
@@ -32,7 +34,7 @@ $LocalDirectory = 'C:\Temp\'
 $LocalFile ="$LocalDirectory"+ ($PublicUrl.split("/") | Select-Object -Last 1)
 
 #Stores arguments/parameters for msiexec command.
-$Argument = "/i $LocalFile /qn /LICENSE=$($SecureVars.msspClientId)"
+$Argument = "/i $LocalFile /qn LICENSE_KEY=$($SecureVars.msspClientId)"
 
 Write-Host "Current value of `$Argument: $Argument"
 
