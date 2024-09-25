@@ -22,4 +22,4 @@ if(!(Get-installedmodule PSWindowsUpdate)){
 Import-Module PSWindowsUpdate -Force
 
 # Initiate download and install of all pending Windows updates
-Get-WindowsUpdate -criteria "isinstalled=0 and deploymentaction=*" -Install -Verbose -AcceptAll -ForceInstall -IgnoreReboot
+Get-WindowsUpdate -NotKBArticleID "KB5043064" -criteria "isinstalled=0 and deploymentaction=*" -Install -Verbose -AcceptAll -ForceInstall -IgnoreReboot
