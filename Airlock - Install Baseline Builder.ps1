@@ -18,12 +18,12 @@
 
   #! WARNING! Secure variables must be defined in Nerdio to use this script correctly.
   In Nerdio, define values for:
-  - AirlockBaselineBuilder
+  - InstallersURL
   - AirlockBaselineBuilderFilename
 #>
 
 # Link to publicly available .msi
-$PublicUrl = "$($SecureVars.AirlockBaselineBuilder)"
+$PublicUrl = "$($SecureVars.InstallersURL)/ABB.msi"
 
 # Local directory to keep the installer
 $LocalDirectory = 'C:\Temp\'

@@ -15,14 +15,14 @@
 
   #! WARNING! Secure variables must be defined in Nerdio to use this script correctly.
     In Nerdio, define values for:
-    - CrowdstrikeInstaller
+    - InstallersURL
     - CrowdstrikeId
 #>
 
 $ProgressPreference = "SilentlyContinue"
 
 #Link to publicly available .exe
-$PublicUrl = "$($SecureVars.CrowdstrikeInstaller)"
+$PublicUrl = "$($SecureVars.InstallersURL)/WindowsSensor-Gov.exe"
 
 #Local directory to keep the installer
 $LocalDirectory = 'C:\Temp\'

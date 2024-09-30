@@ -11,12 +11,12 @@
 
   #! WARNING! Secure variables must be defined in Nerdio to use this script correctly.
   In Nerdio, define values for:
-  - AirlockCaptureAgent
+  - InstallersURL
   - AirlockCaptureAgentFilename
 #>
 
 # Link to .msi on 
-$PublicUrl = "$($SecureVars.AirlockCaptureAgent)"
+$PublicUrl = "$($SecureVars.InstallersURL)/ACA.msi"
 
 # Local directory to keep the installer
 $LocalDirectory = 'C:\Temp\'

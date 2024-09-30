@@ -18,14 +18,14 @@
 
   #! WARNING! Secure variables must be defined in Nerdio to use this script correctly.
   In Nerdio, define values for:
-  - msspLoggingAgent
+  - InstallersURL
   - msspClientId
 #>
 
 $ProgressPreference = "SilentlyContinue"
 
 #Link to publicly available .msi
-$PublicUrl = "$($SecureVars.msspLoggingAgent)"
+$PublicUrl = "$($SecureVars.InstallersURL)/IngallsWindowsLoggingAgent.msi"
 
 #Local directory to keep the installer
 $LocalDirectory = 'C:\Temp\'

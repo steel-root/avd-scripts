@@ -16,7 +16,7 @@
 			- Write: for POSTing computername to API, which returns CS HostID
 	
 	- Secure variables defined in Nerdio
-	  - CrowdstrikeUninstaller
+	  - InstallersURL
 	  - CsApiClientId
 	  - CsApiClientSecret
 	
@@ -333,7 +333,7 @@ function Remove-CrowdstrikeDevice {
 
 #Variable Definition:
 #Link to .exe
-$PublicUrl = "$($SecureVars.CrowdstrikeUninstaller)"
+$PublicUrl = "$($SecureVars.InstallersURL)/CsUninstallTool.exe"
 
 #Local directory to keep the installer
 $LocalDirectory = 'C:\Temp\'

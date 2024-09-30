@@ -18,15 +18,15 @@
 
   #! WARNING! Secure variables must be defined in Nerdio to use this script correctly.
   In Nerdio, define values for:
+  - InstallersURL
   - AirlockPolicyId
-  - AirlockAgent
   - AirlockServer
 #>
 
 $ProgressPreference = "SilentlyContinue"
 
 #Link to publicly available .msi
-$PublicUrl = "$($SecureVars.AirlockAgent)"
+$PublicUrl = "$($SecureVars.InstallersURL)/AirlockAgent.msi"
 
 #Local directory to keep the installer
 $LocalDirectory = 'C:\Temp\'
