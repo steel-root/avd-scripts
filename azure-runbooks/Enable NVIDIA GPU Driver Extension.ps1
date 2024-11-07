@@ -17,14 +17,17 @@ $AzVM = Get-AzVM -Name $AzureVMName -ResourceGroupName $AzureResourceGroupName
 $PublisherName = "Microsoft.HpcCompute"
 $Type = "NvidiaGpuDriverWindows"
 
+# Get the latest major version for Nvidia Extension
+$nvidiaversion = ((Get-AzVMExtensionImage -Location $AzVM.Location -PublisherName $PublisherName -Type $Type).Version[-1][0..2] -join '')
+
 #enable the NVIDIA GPU Driver Extension
-$AMExtension = @{
+$NvidiaExtension = @{
     ResourceGroupName = $AzVM.ResourceGroupName
     Location           = $AzVM.Location
     VMName             = $AzureVMName
     Name               = $Type
     Publisher          = $PublisherName
     ExtensionType      = $Type
-    TypeHandlerVersion = 1.4
+    TypeHandlerVersion = $nvidiaversion
 }
-Set-AzVMExtension @AMExtension
+Set-AzVMExtension @NvidiaExtension

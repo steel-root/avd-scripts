@@ -17,14 +17,17 @@ $AzVM = Get-AzVM -Name $AzureVMName -ResourceGroupName $AzureResourceGroupName
 $PublisherName = "Microsoft.HpcCompute"
 $Type = "AmdGpuDriverWindows"
 
-#enable the AMD GPU extension
-$AMExtension = @{
+# Get the latest major version for AMD Extension
+$amdversion = ((Get-AzVMExtensionImage -Location $AzVM.Location -PublisherName $PublisherName -Type $Type).Version[-1][0..2] -join '')
+
+# Enable the AMD GPU extension
+$AMDExtension = @{
     ResourceGroupName = $AzVM.ResourceGroupName
     Location           = $AzVM.Location
     VMName             = $AzureVMName
     Name               = $Type
     Publisher          = $PublisherName
     ExtensionType      = $Type
-    TypeHandlerVersion = 1.1
+    TypeHandlerVersion = $amdVersion
 }
-Set-AzVMExtension @AMExtension
+Set-AzVMExtension @AMDExtension
