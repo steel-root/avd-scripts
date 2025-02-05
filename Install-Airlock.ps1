@@ -35,7 +35,7 @@ $LocalDirectory = 'C:\Temp\'
 $LocalFile ="$LocalDirectory"+ ($PublicUrl.split("/") | Select-Object -Last 1)
 
 #Stores arguments/parameters for msiexec command.
-$Argument = "/i $LocalFile /qn SERVER=$($SecureVars.AirlockServer) SERVERPORT=3128 POLICY=$($SecureVars.AirlockPolicyId)"
+$Argument = "/i $LocalFile /qn SERVER=$($SecureVars.AirlockServer) SERVERPORT=443 POLICY=$($SecureVars.AirlockPolicyId)"
 
 Write-Host "Current value of `$Argument: $Argument"
 
