@@ -14,7 +14,7 @@
     Company:  C3 Integrated Solutions, LLC.
     Website:  c3isit.com
     Created:  2024-09-05
-    Modified: 2024-09-05
+    Modified: 2025-03-26
 
   #! WARNING! Secure variables must be defined in Nerdio to use this script correctly.
   In Nerdio, define values for:
@@ -25,7 +25,7 @@
 $ProgressPreference = "SilentlyContinue"
 
 #Link to publicly available .msi
-$PublicUrl = "$($SecureVars.InstallersURL)/IngallsWindowsLoggingAgent.msi"
+$PublicUrl = "https://endpoint-installers.s3.us-west-2.amazonaws.com/IngallsWindowsLoggingAgent.msi"
 
 #Local directory to keep the installer
 $LocalDirectory = 'C:\Temp\'
@@ -34,7 +34,7 @@ $LocalDirectory = 'C:\Temp\'
 $LocalFile ="$LocalDirectory"+ ($PublicUrl.split("/") | Select-Object -Last 1)
 
 #Stores arguments/parameters for msiexec command.
-$Argument = "/i $LocalFile /qn LICENSE_KEY=$($SecureVars.msspClientId) LOG_TIME=`"1`""
+$Argument = "/i $LocalFile /qn LICENSE_KEY=$($SecureVars.msspClientId) LOG_TIME=`"1`" RAMS_CLIENT=`"1`""
 
 Write-Host "Current value of `$Argument: $Argument"
 
