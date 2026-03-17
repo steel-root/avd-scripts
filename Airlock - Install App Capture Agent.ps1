@@ -7,12 +7,12 @@
     Company:  C3 Integrated Solutions, LLC.
     Website:  c3isit.com
     Created:  2023-04-08
-    Modified: 2024-09-03
+    Modified: 2025-09-10
 
   #! WARNING! Secure variables must be defined in Nerdio to use this script correctly.
   In Nerdio, define values for:
   - InstallersURL
-  - AirlockCaptureAgentFilename
+  - AirlockACName
 #>
 
 # Link to .msi on 
@@ -22,7 +22,7 @@ $PublicUrl = "$($SecureVars.InstallersURL)/ACA.msi"
 $LocalDirectory = 'C:\Temp\'
 
 # New filename you wish to assign to the downloaded file
-$NewFileName = "$($SecureVars.AirlockCaptureAgentFilename)"
+$NewFileName = "$($SecureVars.AirlockACName)"
 
 # Local Directory + the new filename
 $LocalFile = Join-Path -Path $LocalDirectory -ChildPath $NewFileName

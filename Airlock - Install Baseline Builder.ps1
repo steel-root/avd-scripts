@@ -14,12 +14,12 @@
     Company:  C3 Integrated Solutions
     Website:  c3isit.com
     Created:  2024-05-21
-    Modified: 2024-09-03
+    Modified: 2025-09-10
 
   #! WARNING! Secure variables must be defined in Nerdio to use this script correctly.
   In Nerdio, define values for:
   - InstallersURL
-  - AirlockBaselineBuilderFilename
+  - AirlockBBName
 #>
 
 # Link to publicly available .msi
@@ -29,7 +29,7 @@ $PublicUrl = "$($SecureVars.InstallersURL)/ABB.msi"
 $LocalDirectory = 'C:\Temp\'
 
 # New filename you wish to assign to the downloaded file
-$NewFileName = "$($SecureVars.AirlockBaselineBuilderFilename)"
+$NewFileName = "$($SecureVars.AirlockBBName)"
 
 # Local Directory + the new filename
 $LocalFile = Join-Path -Path $LocalDirectory -ChildPath $NewFileName
