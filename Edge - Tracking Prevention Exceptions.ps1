@@ -1,4 +1,4 @@
-#description: Adds Edge Tracking Prevention exceptions for gstatic.com, recaptcha.net, and simplesat.io
+#description: Adds Edge Tracking Prevention exceptions for c3isit.com, gstatic.com, recaptcha.net, and simplesat.io
 #execution mode: Individual
 #tags: C3, Edge
 
@@ -27,6 +27,7 @@ $UrlsToAdd = @(
     "[*.]gstatic.com"
     "[*.]recaptcha.net"
     "[*.]simplesat.io"
+    "[*.]c3isit.com"
 )
 
 if (!(Test-Path $PolicyPath)) {
